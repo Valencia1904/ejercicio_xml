@@ -26,7 +26,7 @@ for ayuda in ayudas:
 		print documentacion_item.findtext("titulo")
 		print ""
 				
-	print "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+	print"++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 	
 print ""
 raw_input("Pulsa intro para iniciar ejercicio 3")
@@ -61,5 +61,22 @@ for ayuda in ayudas:
 		
 raw_input("Pulsa intro para iniciar ejercicio 5")
 os.system('clear')
+
+fecha = raw_input("Introduce una fecha (YYYY-MM-DD): ")
+fecha =fecha.split('-')
+
+for ayuda in ayudas:
+	presentacion=ayuda.find("plazopresentacion")
+	plazopresentacion_item=presentacion.find("plazopresentacion_item")
+	fecha2=plazopresentacion_item.findtext("incial").split("T")
+	fecha2=fecha2[0].split("-")
+	if fecha[0] <= fecha2[0]:
+		if fecha[1] <= fecha2[1]:
+			if fecha[2] <= fecha2[2]:
+				print ayuda.findtext("titulo")
+				print plazopresentacion_item.findtext("incial")
+				print plazopresentacion_item.findtext("final")
+				print ayuda.findtext("descripcion")
+				print "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 
 
