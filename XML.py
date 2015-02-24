@@ -50,10 +50,16 @@ os.system('clear')
 titulo=raw_input("Introduce el titulo de la beca que desea consultar: ")
 
 for ayuda in ayudas:
-	if str(ayuda.findtext("titulo"))==titulo:
+	titulo2=str(ayuda.findtext("titulo").encode('utf-8'))
+	if titulo2==titulo:
 		print ayuda.findtext("titulo")
 		presentacion=ayuda.find("plazopresentacion")
 		plazopresentacion_item=presentacion.find("plazopresentacion_item")
 		print plazopresentacion_item.findtext("incial")
 		print plazopresentacion_item.findtext("final")
 		print ayuda.findtext("descripcion")
+		
+raw_input("Pulsa intro para iniciar ejercicio 5")
+os.system('clear')
+
+
