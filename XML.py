@@ -5,11 +5,12 @@ xml=etree.parse("ayudas_0.xml")
 ayudas=xml.getroot()
 
 for ayuda in ayudas:
-	print ayuda.findtext("titulo")
+	print "Titulo: ",ayuda.findtext("titulo")
 	presentacion=ayuda.find("plazopresentacion")
 	plazopresentacion_item=presentacion.find("plazopresentacion_item")
-	print plazopresentacion_item.findtext("incial")
-	print plazopresentacion_item.findtext("final")
+	print "Fecha inicial: ",plazopresentacion_item.findtext("incial")
+	print "Fecha final: ",plazopresentacion_item.findtext("final")
+	print "Descripcion:"
 	print ayuda.findtext("descripcion")
 	print "---------------------------------------"
 
@@ -21,6 +22,7 @@ for ayuda in ayudas:
 	print ayuda.findtext("titulo")
 	print "- - - - - - - - - - - - - - - - - - - - - - - - - - - - "
 	documentacion=ayuda.find("documentacion")
+	print "Documentos necesarios:"
 	
 	for documentacion_item in documentacion:
 		print documentacion_item.findtext("titulo")
@@ -52,11 +54,12 @@ titulo=raw_input("Introduce el titulo de la beca que desea consultar: ")
 for ayuda in ayudas:
 	titulo2=str(ayuda.findtext("titulo").encode('utf-8'))
 	if titulo2==titulo:
-		print ayuda.findtext("titulo")
+		print "Titulo: ",ayuda.findtext("titulo")
 		presentacion=ayuda.find("plazopresentacion")
 		plazopresentacion_item=presentacion.find("plazopresentacion_item")
-		print plazopresentacion_item.findtext("incial")
-		print plazopresentacion_item.findtext("final")
+		print "Fecha inicio: ",plazopresentacion_item.findtext("incial")
+		print "Fecha final: ",plazopresentacion_item.findtext("final")
+		print "Descripcion: "
 		print ayuda.findtext("descripcion")
 		
 raw_input("Pulsa intro para iniciar ejercicio 5")
@@ -73,9 +76,11 @@ for ayuda in ayudas:
 	if fecha[0] <= fecha2[0]:
 		if fecha[1] <= fecha2[1]:
 			if fecha[2] <= fecha2[2]:
-				print ayuda.findtext("titulo")
-				print plazopresentacion_item.findtext("incial")
-				print plazopresentacion_item.findtext("final")
+				print "Titulo: ",ayuda.findtext("titulo")
+				print "Fecha inicio: ",plazopresentacion_item.findtext("incial")
+				print "Fecha final: ",plazopresentacion_item.findtext("final")
+				print ""
+				print "Descripcion:"
 				print ayuda.findtext("descripcion")
 				print "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 
