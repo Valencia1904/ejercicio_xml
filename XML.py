@@ -1,14 +1,16 @@
 from lxml import etree
-ayudas=etree.parse("ayudas_0.xml")
-raiz=ayudas.getroot()
+xml=etree.parse("ayudas_0.xml")
+ayudas=xml.getroot()
 
-ayudas=ayudas.findall("ayuda")
+print ayudas[9].text
+#for i in xrange(len(ayudas)):
+#	print ayudas[i][2].text
 
-for ayuda in ayudas:
-	print ayuda.findtext("titulo")
-	presentacion=ayuda.find("plazopresentacion")
-	plazopresentacion_item=ayuda.find("plazopresentacion_item")
+#for ayuda in ayudas:
+#	print ayuda.findtext("titulo")
+#	presentacion=ayuda.find("plazopresentacion")
+#	plazopresentacion_item=ayuda.find("plazopresentacion_item")
 #	print plazopresentacion_item.findtext("incial")
 #	print plazopresentacion_item.findtext("final")
-	print ayuda.findtext("descripcion")
-	print "---------------------------------------"
+#	print ayuda.findtext("descripcion")
+#	print "---------------------------------------"
